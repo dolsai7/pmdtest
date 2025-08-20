@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Login</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <style>
+    /* 전체 중앙 배치 */
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fafafa;
+    }
+
+    /* 로그인 카드 */
+    .card {
+      width: 100%;
+      max-width: 420px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      background: #fff;
+    }
+    .title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    input  { padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+    button { width: 100%; padding: 12px; border: 0; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    .btn-primary { background: #2563eb; color: white; }
+
+    /* 환영 문구 영역 (성공 시에만 표시) */
+    #welcome {
+      display: none;            /* 처음엔 숨김 */
+      font-weight: 800;
+      color: #059669;
+      text-align: center;
+      line-height: 1.1;
+      user-select: none;
+      /* 초기 폰트 크기는 JS에서 10px로 설정 */
+    }
+  </style>
+</head>
+<body>
+  <!-- 로그인 폼 카드 -->
+  <div class="card" id="loginCard">
+    <div class="title">로그인</div>
+    <form id="loginForm">
+      <div class="field">
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id" placeholder="아이디를 입력하세요" required />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               placeholder="영문/숫자만, 최소 8자" required />
+      </div>
+      <button class="btn-primary" type="submit">로그인</button>
+    </form>
+  </div>
+
+  <!-- 성공 후에만 보여줄 환영 텍스트 -->
+  <div id="welcome" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
