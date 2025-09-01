@@ -62,7 +62,7 @@
                         <ruleset>
                             <directory>src/main/resources</directory> <!-- ruleset 파일 경로 -->
                             <includes>
-                                <include>pmd-ruleset.xml</include> <!-- ruleset 파일 이름 -->
+                                <include>rulesets/pmd-ruleset.xml</include> <!-- ruleset 파일 이름 -->
                             </includes>
                         </ruleset>
                     </rulesets>
